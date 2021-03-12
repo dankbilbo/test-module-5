@@ -18,9 +18,11 @@
       <td>Description</td>
       <td>{{book?.description}}</td>
     </tr>
-    <tr>
-      <td><button (click)="delete()">Xoá</button></td>
-      <td><a routerLink="">Thoát</a></td>
+    <tr >
+      <td colspan="2" align="center"><button class="button" (click)="delete()" >Xoá</button></td>
     </tr>
   </table>
+</div>
+<div align="center" style="margin-top: 10px">
+  <a class="button" routerLink="" >Thoát</a>
 </div>

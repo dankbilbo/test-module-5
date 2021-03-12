@@ -1,4 +1,3 @@
-
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {BookService} from '../../book.service';
 import {MatPaginator} from '@angular/material/paginator';
@@ -11,9 +10,9 @@ import {MatTableDataSource} from '@angular/material/table';
   styleUrls: ['./list-book.component.css']
 })
 export class ListBookComponent implements OnInit {
-  displayedColumns: String[] = ['id', 'title', 'author', 'description','edit','delete'];
+  displayedColumns: String[] = ['id', 'title', 'author', 'description', 'edit', 'delete'];
   dataSource: any;
-  allBook? : any;
+  allBook?: any;
   @ViewChild(MatPaginator) paginator?: MatPaginator;
   @ViewChild(MatSort) sort?: MatSort;
 
@@ -21,6 +20,10 @@ export class ListBookComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.getALlBook();
+  }
+
+  getALlBook() {
     this.bookService.getALl().subscribe(result => {
         this.allBook = result;
         this.dataSource = new MatTableDataSource(this.allBook);
@@ -33,7 +36,7 @@ export class ListBookComponent implements OnInit {
   }
 
   filter(searchedKey: any) {
-    console.log(searchedKey)
+    console.log(searchedKey);
     this.dataSource.filter = searchedKey.trim().toLowerCase();
   }
 

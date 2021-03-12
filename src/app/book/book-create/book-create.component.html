@@ -20,7 +20,10 @@
     <div><p *ngIf="createForm.controls['description'].hasError('required')" style="color:red">trường này bắt buộc nhập</p></div>
     <div><p *ngIf="createForm.controls['description'].hasError('minlength')" style="color:red">độ dài input > 3</p></div>
     <tr>
-      <td colspan="2" align="center"><button (click)="create()">Add</button></td>
+      <td colspan="2" align="center"><button class="button" (click)="create()">Add</button></td>
     </tr>
   </table>
 </form>
+<div align="center" style="margin-top: 20px">
+  <a class="button" routerLink="">Thoát</a>
+</div>

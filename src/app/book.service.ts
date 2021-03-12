@@ -28,6 +28,8 @@ export class BookService {
   }
 
   create(book:Book):Observable<Book>{
+    console.log(book)
+    console.log(`${API_URL}/books`)
     return this.http.post<Book>(`${API_URL}/books`,book);
   }
 

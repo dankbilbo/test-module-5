@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {BookService} from '../../book.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-book-create',
@@ -14,7 +15,7 @@ export class BookCreateComponent implements OnInit {
     description: new FormControl('', [Validators.required, Validators.minLength(3)])
   });
 
-  constructor(private bookService: BookService) {
+  constructor(private bookService: BookService,private router:Router) {
 
   }
 
@@ -25,6 +26,7 @@ export class BookCreateComponent implements OnInit {
   create() {
     this.bookService.create(this.createForm.value).subscribe(result => {
       console.log(result);
+
     }, error => {
       console.log(error);
     });

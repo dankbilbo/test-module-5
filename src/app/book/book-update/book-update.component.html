@@ -20,8 +20,10 @@
     <div><p *ngIf="updateForm.controls['description'].hasError('required')" style="color:red">trường này bắt buộc nhập</p></div>
     <div><p *ngIf="updateForm.controls['description'].hasError('minlength')" style="color:red">độ dài input > 3</p></div>
     <tr>
-      <td  align="center"><button (click)="update()">Sửa</button></td>
-      <td align="center"><a routerLink="">Thoát</a></td>
+      <td  colspan="2" align="center"><button class="button" (click)="update()">Sửa</button></td>
     </tr>
   </table>
 </form>
+<div align="center" style="margin-top: 20px">
+  <a class="button" routerLink="">Thoát</a>
+</div>

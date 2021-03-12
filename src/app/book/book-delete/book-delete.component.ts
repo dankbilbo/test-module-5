@@ -26,6 +26,7 @@ export class BookDeleteComponent implements OnInit {
       console.log(error);
     })
   }
+
   getPathvariable() {
     this.id = this.activedRoute.snapshot.params['id'];
   }
