@@ -1,0 +1,27 @@
+<h2 align="center"><b>UPDATE FORM</b></h2>
+<form [formGroup]="updateForm" >
+  <table style="border: 1px solid black" align="center">
+    <tr>
+      <td>Title</td>
+      <td><input id="title" type="text" formControlName="title"></td>
+    </tr>
+    <div><p *ngIf="updateForm.controls['title'].hasError('required')" style="color:red">trường này bắt buộc nhập</p></div>
+    <div><p *ngIf="updateForm.controls['title'].hasError('minlength')" style="color:red">độ dài input > 3</p></div>
+    <tr>
+      <td>Author</td>
+      <td><input type="text" formControlName="author"></td>
+    </tr>
+    <div><p *ngIf="updateForm.controls['author'].hasError('required')" style="color:red">trường này bắt buộc nhập</p></div>
+    <div><p *ngIf="updateForm.controls['author'].hasError('minlength')" style="color:red">độ dài input > 3</p></div>
+    <tr>
+      <td>Description</td>
+      <td><textarea cols="30" rows="10" formControlName="description"></textarea></td>
+    </tr>
+    <div><p *ngIf="updateForm.controls['description'].hasError('required')" style="color:red">trường này bắt buộc nhập</p></div>
+    <div><p *ngIf="updateForm.controls['description'].hasError('minlength')" style="color:red">độ dài input > 3</p></div>
+    <tr>
+      <td  align="center"><button (click)="update()">Sửa</button></td>
+      <td align="center"><a routerLink="">Thoát</a></td>
+    </tr>
+  </table>
+</form>

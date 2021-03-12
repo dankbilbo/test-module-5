@@ -1,0 +1,26 @@
+<h1 align="center">Xoá sách</h1>
+
+<div>
+  <table style="border: 1px solid black" align="center">
+    <tr>
+      <td>Id</td>
+      <td><b>{{book?.id}}</b></td>
+    </tr>
+    <tr>
+      <td>Title</td>
+      <td><b>{{book?.title}}</b></td>
+    </tr>
+    <tr>
+      <td>Author</td>
+      <td>{{book?.author}}</td>
+    </tr>
+    <tr>
+      <td>Description</td>
+      <td>{{book?.description}}</td>
+    </tr>
+    <tr>
+      <td><button (click)="delete()">Xoá</button></td>
+      <td><a routerLink="">Thoát</a></td>
+    </tr>
+  </table>
+</div>
